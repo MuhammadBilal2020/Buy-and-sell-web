@@ -61,20 +61,22 @@ console.log(getLocalData);
 let display = document.querySelector('.product-container')
 
 
-display.innerHTML = `<div class="product-image">
-
-
-<img src="${getLocalData.productPic}" alt="Product Image">
+display.innerHTML = `<div class="flex flex-col md:flex-row bg-white shadow-lg rounded-lg p-4 md:p-6 mx-auto mt-4 max-w-screen-lg">
+    <div class="product-image flex-shrink-0 mb-4 md:mb-0 md:mr-4">
+        <img src="${getLocalData.productPic}" alt="Product Image" class="rounded-lg object-cover w-full h-48 md:h-64">
+    </div>
+    <div class="product-details flex-1">
+        <h1 class="text-2xl font-bold mb-2">${getLocalData.productTitle}</h1>
+        <p class="product-description text-gray-700 mb-4">
+            ${getLocalData.productDesc}
+        </p>
+        <p class="product-price text-xl font-semibold text-green-600 mb-4">${getLocalData.productPrice} Rs.</p>
+        <button class="add-to-cart bg-[#4c68fe] text-white py-2 px-4 rounded hover:bg-[#3b54d4] transition duration-300">
+            Add to Cart
+        </button>
+    </div>
 </div>
-<div class="product-details">
-<h1>${getLocalData.productTitle} </h1>
-<p class="product-description">
-   ${getLocalData.productDesc}
-</p>
-<p class="product-price">${getLocalData.productPrice} Rs.</p>
-<button class="add-to-cart">Add to Cart</button>
 
-
-</div>`
+`
 
 

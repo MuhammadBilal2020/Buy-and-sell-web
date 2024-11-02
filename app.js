@@ -4,13 +4,13 @@ import { doc, getDocs, collection, query, where } from "https://www.gstatic.com/
 import { auth, db } from './config.js'
 
 // selectors and variables
-let userImage = document.querySelector('#profileImage')
-let signOutBtn = document.querySelector('#logout')
-let userAvatar = document.querySelector('.nav-icons')
-let searchInput = document.querySelector('.searchInput')
-let produtsDiv = document.querySelector('.products')
+let userImage = document.querySelector('#profileImage');
+let signOutBtn = document.querySelector('#logout');
+let userAvatar = document.querySelector('.nav-icons');
+let searchInput = document.querySelector('.searchInput');
+let productsDiv = document.querySelector('.products');
 
-let productsArr = []
+let productsArr = [];
 
 // check user login or not 
 function checkUserStatus() {
@@ -29,7 +29,7 @@ function checkUserStatus() {
       });
     } else {
       console.log('no user');
-      userAvatar.innerHTML = `<button class="h-login"><a href="login.html">login</a></button>`;
+      userAvatar.innerHTML = `<button class="h-login bg-white px-3 py-2 w-[5.5rem] rounded hover:text-[blue] hover:"><a href="login.html">login</a></button>`;
     }
   });
 }
@@ -43,7 +43,7 @@ signOutBtn.addEventListener('click', () => {
   }).catch((error) => {
     console.log('signOut error ==>' + error);
   });
-})
+});
 
 // get products data from firestore 
 async function getData() {
@@ -60,23 +60,25 @@ getData();
 function renderProducts(products = productsArr) {
   console.log(products);
   
-  produtsDiv.innerHTML = "";
-  products.map((items) => {
-    produtsDiv.innerHTML += `
-            <div class="card bg-base-100 w-96 p-[1rem] shadow-xl">
-                <figure>
-                    <img class="proImg" src="${items.productPic}">
-                </figure>
-                <div class="card-body">
-                    <h2 class="card-title">${items.productTitle}</h2>
-                    <p>${items.productPrice}</p>
-                    <p>${items.productDesc}</p>
-                    <div class="card-actions justify-end">
-                        <button id="more" class="btn btn-primary">More...</button>
-                    </div>
-                </div>
-            </div>
-        `;
+  productsDiv.innerHTML = "";
+  products.forEach((item) => {
+    productsDiv.innerHTML += `
+    <div class="card bg-base-100 w-full md:w-96 p-4 shadow-xl flex flex-col rounded-lg overflow-hidden transition-transform transform hover:scale-105">
+  <figure class="flex justify-center mb-4">
+    <img class="proImg w-[400px] h-[250px] object-cover rounded-lg" src="${item.productPic}" alt="${item.productTitle}">
+  </figure>
+  <div class="card-body flex-1 flex flex-col justify-between">
+    <h2 class="card-title text-lg md:text-xl font-bold mb-2">${item.productTitle}</h2>
+    <p class="text-sm md:text-base font-semibold  text-gray-700">${item.productPrice}</p>
+    <p class="text-xs md:text-sm text-gray-600 flex-1">${item.productDesc}</p>
+    <div class="card-actions justify-end mt-4">
+      <button id="more" class="btn btn-primary">More...</button>
+    </div>
+  </div>
+</div>
+
+
+    `;
   });
 
   // Add event listeners to "More..." buttons
@@ -97,7 +99,7 @@ searchInput.addEventListener('input', () => {
   const filteredProducts = productsArr.filter(product =>
     product.productTitle.toLowerCase().includes(query)
   );
-console.log(filteredProducts);
+  console.log(filteredProducts);
 
   renderProducts(filteredProducts);
 });

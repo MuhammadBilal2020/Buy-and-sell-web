@@ -4,138 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- styling file  -->
+    <!-- styling file -->
     <link rel="stylesheet" href="style.css">
 
     <!-- tailwind css link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <title>products</title>
+    <title>Products</title>
 </head>
 
 <body>
 
-    <!-- navbar  -->
+    <!-- navbar -->
     <nav id="navbar-m">
-
-        <div class="navbar bg-[#4c68ff]  text-neutral-content flex justify-between  px-[1.4rem] ">
+        <div class="navbar bg-[#4c68ff] text-neutral-content flex justify-between items-center p-4">
             <div class="head-logo">
-                <p class="nav-heading text-[white] text-[1.8rem]">Buy / Sells Corner</p>
-
+                <p class="nav-heading text-white text-2xl">Buy / Sell Corner</p>
             </div>
 
-            <div class="nav-icons flex gap-4 justify-center items-center">
-
+            <div class="nav-icons flex items-center gap-4">
                 <div class="Logout-div">
-
-                    <button id="logout">Logout</button>
+                    <button id="logout" class="btn btn-outline btn-white">Logout</button>
                 </div>
 
-
-                <div class="nav-img-div">
-
+                <div class="nav-img-div relative">
                     <div class="profile-container">
-                        <img class="profile-photo" id="profileImage">
-                        <div class="dropdown-menu" id="dropdownMenu">
+                        <img class="profile-photo w-10 h-10 rounded-full cursor-pointer" id="profileImage" src="https://via.placeholder.com/50" alt="Profile">
+                        <div class="dropdown-menu absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-lg p-2 hidden" id="dropdownMenu">
                             <ul>
-                                <li><a href="register.html">register</a></li>
-                                <li><a href="login.html">login</a></li>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="postAd.html">post ad</a></li>
-
+                                <li><a href="register.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Register</a></li>
+                                <li><a href="login.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Login</a></li>
+                                <li><a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Home</a></li>
+                                <li><a href="postAd.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Post Ad</a></li>
                             </ul>
                         </div>
                     </div>
-
                 </div>
-
-
-
             </div>
-
         </div>
-
     </nav>
 
+    <!-- main -->
+    <main id="main" class="p-4">
+        <div class="main-div max-w-screen-xl mx-auto">
 
-
-    <!-- main  -->
-
-
-    <main id="main">
-
-        <div class="main-div">
-
-
-            <!-- search  -->
-            <div class="search-div ">
-
-                <label class="s-lable input input-bordered bg-[white] flex  items-center gap-2  mt-[.3rem]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                        class="h-4 w-4 opacity-70 ">
+            <!-- Search -->
+            <div class="search-div mb-4">
+                <label class="s-label input input-bordered bg-white flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-4 w-4 opacity-70">
                         <path fill-rule="evenodd"
                             d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
                             clip-rule="evenodd" />
                     </svg>
-                    &nbsp; &nbsp;
-                    <input type="text" class="grow searchInput input-font" placeholder="Search" />
-
+                    <input type="text" class="grow searchInput input-font  rounded p-2" placeholder="Search" />
                 </label>
-
             </div>
 
-
-
-            <!-- products  -->
-            <div class="products-div mt-[2rem]">
-
-                <div class="products-head">
-
-                    <h1 class="pro-heading"> Products </h1>
-
+            <!-- Products -->
+            <div class="products-div mt-4">
+                <div class="products-head mb-4">
+                    <h1 class="pro-heading text-2xl font-semibold">Products</h1>
                 </div>
 
-                <div class="products mt-[2rem] flex justify-between flex-wrap gap-y-[2rem] items-center">
-
-                    <div class="product">
-
-
-
+                <div class="products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="product bg-gray-100 p-4 rounded-lg shadow-md">
+                        <p class="text-center">Product 1</p>
                     </div>
-
+                    <div class="product bg-gray-100 p-4 rounded-lg shadow-md">
+                        <p class="text-center">Product 2</p>
+                    </div>
+                    <div class="product bg-gray-100 p-4 rounded-lg shadow-md">
+                        <p class="text-center">Product 3</p>
+                    </div>
+                    <!-- Additional products can be added here -->
                 </div>
-
-
             </div>
-
-
-
-
-
         </div>
-
-
-
     </main>
 
-
-
-
-
-
-    <!-- js file link -->
-    <script type="module" src="app.js"></script>
-
-
-    <!-- taiwind js link  -->
+    <!-- Tailwind JS link -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- font owesome link  -->
+    
+    <script type="module" src="app.js"></script>
+    <!-- Font Awesome link -->
     <script src="https://kit.fontawesome.com/e703e00a5c.js" crossorigin="anonymous"></script>
 
-
-    <!-- js style link  -->
+    <!-- JS style link -->
     <script src="style.js"></script>
-
 
 </body>
 

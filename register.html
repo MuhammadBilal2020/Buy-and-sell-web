@@ -4,89 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- styling file  -->
+    <!-- Styling file -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- tailwind css link -->
+    <!-- Tailwind CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 
     <title>Register</title>
-
-
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
 
-    <!-- navbar  -->
+    <!-- Navbar -->
     <nav id="navbar">
-
-        <div class="navbar bg-[#4c68fe] text-neutral-content">
-
-            <p class="nav-heading text-[white] text-[1.8rem]">Buy / Sells Corner</p>
-
+        <div class="navbar bg-[#4c68fe] text-neutral-content p-4">
+            <p class="nav-heading text-white text-2xl">Buy / Sell Corner</p>
         </div>
-
     </nav>
 
+    <!-- Main -->
+    <main class="flex-grow flex items-center justify-center bg-[#edefec]">
+        <div class="reg-form-style w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold text-center mb-4">Register</h2>
 
-    <!-- main  -->
-    <main>
-
-        <!-- Register form  -->
-
-        <div class="reg-form-style flex items-center justify-center text-center">
-
-            <form id="forms">
-                <!-- first Name  -->
-                <input type="text" id="first-name" class="py-[.4rem] px-[.6rem] text-[#4c68fe]"
-                    placeholder=" First Name">
-                <br> <br>
-
-                <!-- Last Name  -->
-                <input type="text" id="last-name" class="py-[.4rem] px-[.6rem] text-[#4c68fe]" placeholder=" Last Name">
-                <br> <br>
-
-                <!-- Email  -->
-                <input type="email" id="email" class="py-[.4rem] px-[.6rem] text-[#4c68fe]" placeholder=" email">
-                <br> <br>
-
-                <!-- Password  -->
-                <input type="password" class="py-[.4rem] px-[.6rem] text-[#4c68fe]" id="pass" placeholder=" pasword">
-                <br> <br>
-
-                <!-- Photo  -->
-                <input type="file" class="py-[.4rem] px-[.6rem]" id="profilePic" placeholder=" pasword">
-                <br> <br>
-
-
-                <!-- Register button  -->
-                <button type="submit" class="register  py-[.4rem] px-[.6rem]  bg-[#4c68fe]">Register</button>
-                <br> <br>
-
-                <!-- Login Page Link  -->
-                <a  href="login.html" class="NAU">ALREADY A USER? PLEASE LOGIN</a>
-
+            <!-- Register form -->
+            <form id="forms" class="flex flex-col">
+                <!-- First Name -->
+                <input type="text" id="first-name" class="py-2 bg-[white] px-3 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:ring-[#4c68fe]" placeholder="First Name" required>
+                
+                <!-- Last Name -->
+                <input type="text" id="last-name" class="py-2 bg-[white] px-3 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:ring-[#4c68fe]" placeholder="Last Name" required>
+                
+                <!-- Email -->
+                <input type="email" id="email" class="py-2 bg-[white] px-3 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:ring-[#4c68fe]" placeholder="Email" required>
+                
+                <!-- Password -->
+                <input type="password" id="pass" class="py-2 bg-[white] px-3 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:ring-[#4c68fe]" placeholder="Password" required>
+                
+                <!-- Photo -->
+                <input type="file" id="profilePic"  class="py-2  bg-[white] px-3 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:ring-[#4c68fe]">
+                
+                <!-- Register button -->
+                <button type="submit" class="register py-2 px-4 bg-[#4c68fe] text-white rounded hover:bg-[#3b54d9] transition duration-200">Register</button>
+                
+                <!-- Login Page Link -->
+                <p class="text-center mt-4">
+                    <a href="login.html" class="text-[#4c68fe] hover:underline">ALREADY A USER? PLEASE LOGIN</a>
+                </p>
             </form>
-
         </div>
-
-
-
     </main>
 
-
-
-
-
-
-
-
- <!-- register js file  -->
- <script type="module" src="register.js"></script>
-
-    <!-- taiwind js link  -->
+    <!-- Register JS file -->
+    <script type="module" src="register.js"></script>
+    
+    <!-- Tailwind JS link -->
     <script src="https://cdn.tailwindcss.com"></script>
-   
 </body>
 
 </html>

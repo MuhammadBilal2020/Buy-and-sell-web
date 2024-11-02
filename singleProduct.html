@@ -10,45 +10,32 @@
 
     <!-- navbar  -->
     <nav id="navbar-m">
-
-        <div class="navbar bg-[#4c68ff]  text-neutral-content flex justify-between  px-[1.4rem] ">
+        <div class="navbar bg-[#4c68ff] text-neutral-content flex justify-between items-center p-4">
             <div class="head-logo">
-                <p class="nav-heading text-[white] text-[1.8rem]">Buy / Sells Corner</p>
-
+                <p class="nav-heading text-white text-2xl">Buy / Sell Corner</p>
             </div>
 
-            <div class="nav-icons flex gap-4 justify-center items-center">
-
+            <div class="nav-icons flex items-center gap-4">
                 <div class="Logout-div">
-
-                    <button id="logout">Logout</button>
+                    <button id="logout" class="btn btn-outline bg-[red] hover:bg-[#f84e4e] w-[5.5rem] text-[white]  px-3 py-1 rounded btn-white">Logout</button>
                 </div>
 
-
-                <div class="nav-img-div">
-
+                <div class="nav-img-div relative">
                     <div class="profile-container">
-                        <img     class="profile-photo" id="profileImage">
-                        <div class="dropdown-menu" id="dropdownMenu">
+                        <img class="profile-photo w-10 h-10 rounded-full cursor-pointer" id="profileImage" src="https://via.placeholder.com/50" alt="Profile">
+                        <div class="dropdown-menu absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-lg p-2 hidden" id="dropdownMenu">
                             <ul>
-                                <li><a href="register.html">register</a></li>
-                                <li><a href="login.html">login</a></li>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="postAd.html">post ad</a></li>
-
+                                <li><a href="register.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Register</a></li>
+                                <li><a href="login.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Login</a></li>
+                                <li><a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Home</a></li>
+                                <li><a href="postAd.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Post Ad</a></li>
                             </ul>
                         </div>
                     </div>
-
                 </div>
-
-
-
             </div>
-
         </div>
-
-    </nav>  
+    </nav>
 
 
 
